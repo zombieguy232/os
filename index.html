@@ -10074,10 +10074,11 @@ class UserAccount {
     this.createdAt = Date.now();
     this.allowedApps = []; // Empty means all apps allowed
     this.customAvatar = null;
-    if (username === "zombie") {
+    if (username.toLowerCase() === "zombie") {
   role = "superuser";
+} else {
+  role = "standard";
 }
-
   }
 }
 
